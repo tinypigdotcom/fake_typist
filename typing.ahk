@@ -4,7 +4,6 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 
 ^!b::
-    Colors = The quick brown fox jumped over the lazy dog's back 0123456789 times.,Does it?,Yeah it does.
     Loop, read, typing.txt
     {
         command := SubStr(A_LoopReadLine, 1, 2)
