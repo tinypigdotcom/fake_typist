@@ -1,0 +1,116 @@
+﻿te PS1='`pwd` $ '
+te cd /home/dbradford/shopping_cart/ShoppingCart
+te p -s
+te make realclean
+te cd ..
+te find . -name '*.sv' -exec rm {} \;
+te # resuming in 20 seconds
+pa 2000
+te cls
+pa 2000
+te # Get help
+te z
+te # or
+te p --help
+te # Show current project list
+te p
+pa 2000
+te # Create a new project
+te p s 'Shopping Cart'
+te p
+pa 2000
+te # Let's look at our current directory's files and subdirectories
+te find .
+pa 2000
+te cd ShoppingCart/
+te ls -l
+pa 2000
+te # Add some files
+te f m Makefile.PL
+te f t t/ShoppingCart.t
+te f s lib/ShoppingCart.pm
+te f
+pa 2000
+te # Add some more files (note case sensitivity of shortcut keys)
+te f C Changes
+te f M MANIFEST
+te f R README
+te f
+pa 2000
+te # Edit a couple files
+te f st
+pa 2000
+tn Q
+te # Edit all files
+te fa
+pa 2000
+tn Q
+te # Remove one file
+te f -R
+te # Remove two files
+te f -CM
+te f
+te # Add a command
+te x p 'perl Makefile.PL'
+te x
+pa 2000
+te # Run it
+te x p
+pa 2000
+te # Add more commands
+te x t 'make test'
+te x t
+pa 7000
+te x c 'make realclean'
+te x c
+pa 2000
+te # Run two commands in sequence
+te x pt
+pa 7000
+te # Note that xa (run all commands) exists, but may not be helpful depending on command order
+te # Add more files in other directories
+te cd ..
+te ls
+te cd www
+te ls page/
+te f h page/shopping_cart.html
+te f j script/cartItems.js
+te f c style/home.css
+te f
+pa 2000
+te # Change to the directory of a given file
+te . d s
+te # you can do it without the '.' if you set up alias d='. d'
+te d c
+te # Use af to locate and add more files
+te cd ..
+te export AF_DIR=`pwd`
+te af html
+te i 0
+te # (I just added file #0 as shortcut 'i')
+te f
+pa 2000
+te # Use v to assign full file paths to shell variables
+te . v
+te # you can do it without the '.' if you set up alias v='. v'
+te cp $h $h.sv
+te cp $t $h
+te less $h
+te # use variable $all to perform operations on all files in the project
+te grep -i perl $all
+pa 2000
+te # Copy projects with 'p cp'
+te p
+pa 2000
+te p cp s sw
+pa 2000
+te # Then rename the new project
+te p sw 'Shopping Cart (rework)'
+te # Move projects with 'p mv'
+te p mv sw rw
+pa 2000
+te # Search projects
+te p \?shop
+te p ?rework
+te # Thanks for watching! More info available at tinypig.com
+
